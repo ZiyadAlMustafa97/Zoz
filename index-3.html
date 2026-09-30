@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZIAD ALMOSTAFA ملخصات</title>
+<style>
+
+:root{--bg:#f3f7f8;--card:#fff;--card-2:#e8f0f3;--ink:#10283a;--ink-dim:#4d6373;--rule:#cfdde4;--acc:#2457d6;--acc-ink:#fff;--ember:#d6336c;--toxic:#c62828;--leaf:#2e7d32;--slate:#546e7a;--violet:#6a4bc4;--ok:#2e7d32;--bad:#c62828}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0d1a26;--card:#13283a;--card-2:#1a3449;--ink:#e8f1f6;--ink-dim:#9db4c3;--rule:#2a4257;--acc:#7aa8ff;--acc-ink:#0b1a2e;--ember:#ff7aa2;--toxic:#ff7b72;--leaf:#7fd18b;--slate:#9fb6c2;--violet:#b7a3f0;--ok:#7fd18b;--bad:#ff7b72}}:root[data-theme="dark"]{--bg:#0d1a26;--card:#13283a;--card-2:#1a3449;--ink:#e8f1f6;--ink-dim:#9db4c3;--rule:#2a4257;--acc:#7aa8ff;--acc-ink:#0b1a2e;--ember:#ff7aa2;--toxic:#ff7b72;--leaf:#7fd18b;--slate:#9fb6c2;--violet:#b7a3f0;--ok:#7fd18b;--bad:#ff7b72}
+*{box-sizing:border-box}html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font:17px/1.9 'Tajawal',system-ui,sans-serif}
+h1,h2,h3,button,.num{font-family:'Cairo',sans-serif}
+.wrap{max-width:780px;margin:0 auto;padding:0 16px 70px}
+header{padding:22px 0 8px;text-align:center}
+.by{direction:ltr;font-family:'Cairo',sans-serif;font-weight:800;font-size:14px;color:var(--ember)}
+h1{font-size:clamp(26px,6vw,36px);font-weight:900;margin:4px 0;line-height:1.35}
+.sub{color:var(--ink-dim);font-size:15px;margin:0}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding:10px 0;border-bottom:1px solid var(--rule)}
+.seg{display:flex;gap:6px;margin-bottom:8px}
+.seg button{flex:1;font-weight:800;font-size:14px;line-height:1.4;padding:9px 6px;border-radius:10px;border:1px solid var(--rule);background:var(--card);color:var(--ink-dim);cursor:pointer}
+.seg button.on{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+.seg.modes button.on{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.stat{font-size:13px;color:var(--ink-dim);text-align:center;margin-top:4px}
+#app{padding-top:16px}
+.tools{display:flex;justify-content:flex-end;margin-bottom:10px}
+.btn{font-weight:800;font-size:14px;padding:9px 16px;border-radius:10px;border:1px solid var(--rule);background:var(--card);color:var(--ink);cursor:pointer}
+.btn.pri{background:var(--acc);border-color:var(--acc);color:var(--acc-ink)}
+/* summary sections */
+section{background:var(--card);border:1px solid var(--rule);border-radius:14px;margin-bottom:12px;padding:0 16px 16px}
+.section-head{display:flex;align-items:center;gap:12px;padding:14px 0 6px;cursor:pointer;user-select:none}
+.section-head .num{width:32px;height:32px;border-radius:50%;background:var(--acc);color:var(--acc-ink);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+.section-head h2{font-size:19px;margin:0;flex:1}
+.section-head::after{content:'⌄';font-size:22px;color:var(--ink-dim);transition:transform .2s}
+section.closed .section-head::after{transform:rotate(90deg)}
+section.closed>:not(.section-head){display:none}
+.callout,.conclusion,.obs-box{background:var(--card-2);border-radius:10px;padding:14px 16px;margin:10px 0;font-size:16px}
+.callout{border-right:4px solid var(--ember)}.callout b,.obs-box b{color:var(--ember)}
+.comp-card,.gas-box,.split .col,.text-block{background:var(--card-2);border-radius:12px;padding:14px 16px;margin-bottom:10px;border-top:3px solid var(--accent,var(--acc))}
+.comp-title,.gas-box h3,.split h3{font-weight:800;font-size:16px;color:var(--accent,var(--acc));margin:0 0 6px;display:flex;align-items:center;gap:8px}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--accent,var(--acc))}
+.comp-card p,.text-block p{margin:0 0 8px}.fact{font-size:15px;color:var(--ink-dim);border-top:1px dashed var(--rule);padding-top:8px;margin-top:8px}
+.c-nicotine{--accent:var(--leaf)}.c-carb{--accent:var(--slate)}.c-mineral{--accent:#b8901f}.c-radio{--accent:var(--violet)}
+.gas-grid,.split{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(max-width:520px){.gas-grid,.split{grid-template-columns:1fr}}
+.gas-box.tox{--accent:var(--toxic)}.gas-box.irr{--accent:var(--ember)}
+.split.safe h3,.col.safe h3{color:var(--leaf)}.col.danger{--accent:var(--toxic)}.col.safe{--accent:var(--leaf)}
+.molecule{display:flex;justify-content:space-between;background:var(--card);border-radius:8px;padding:8px 12px;margin-bottom:6px;font-size:15px}
+.molecule span{font-weight:800;color:var(--ink-dim)}
+.split ul{margin:0;padding-inline-start:18px;color:var(--ink-dim)}
+.steps{list-style:none;margin:0;padding:0}.steps li{display:flex;gap:10px;background:var(--card-2);border-radius:10px;padding:10px 14px;margin-bottom:8px;font-size:15.5px}
+.steps .n{font-family:'Cairo',sans-serif;font-weight:800;color:var(--ember)}
+/* flashcards */
+.cnt{text-align:center;color:var(--ink-dim);font-size:14px;margin-bottom:10px}
+.fc{perspective:1000px;height:260px;margin-bottom:14px;cursor:pointer}
+.fc-in{position:relative;width:100%;height:100%;transition:transform .5s;transform-style:preserve-3d}
+.fc.flip .fc-in{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;background:var(--card);border:2px solid var(--rule);border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;overflow:auto}
+.face.back{transform:rotateY(180deg);border-color:var(--acc);background:var(--card-2)}
+.face small{color:var(--ink-dim);font-size:12px;margin-bottom:8px}.face .t{font-size:18px;font-weight:700}.face .hint{margin-top:10px;font-size:12px;color:var(--ink-dim)}
+.row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+/* quiz */
+.qz{background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:18px}
+.qz .qt{font-size:18px;font-weight:700;margin-bottom:14px}
+.opt{display:block;width:100%;text-align:right;margin-bottom:8px;padding:12px 14px;font:600 16px/1.6 'Tajawal',sans-serif;border-radius:12px;border:2px solid var(--rule);background:var(--card-2);color:var(--ink);cursor:pointer}
+.opt.ok{border-color:var(--ok);background:rgba(47,143,78,.18)}.opt.bad{border-color:var(--bad);background:rgba(192,57,43,.18)}.opt:disabled{cursor:default}
+.tf{display:flex;gap:10px}.tf .opt{text-align:center;font-size:22px}
+.fb{margin-top:10px;padding:12px 14px;border-radius:10px;background:var(--card-2);font-size:15.5px}
+.bigscore{font-family:'Cairo',sans-serif;font-size:56px;font-weight:900;color:var(--acc);text-align:center;line-height:1.2}
+.prog{height:6px;background:var(--rule);border-radius:4px;margin-bottom:14px;overflow:hidden}.prog i{display:block;height:100%;background:var(--acc);transition:width .3s}
+.empty{text-align:center;color:var(--ink-dim);padding:30px 0}
+
+:root{--grid:#dbe6eb}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--grid:#1a3144}}
+:root[data-theme="dark"]{--grid:#1a3144}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:26px 26px;background-attachment:fixed}
+.s-wrap{max-width:860px;margin:0 auto;padding:0 18px 48px}
+.s-nav{padding:18px 0 0;font:700 17px 'Reem Kufi',sans-serif;display:flex;align-items:center;gap:10px}
+.s-nav i{width:14px;height:14px;background:var(--ember);border-radius:50%}
+.s-hero{padding:54px 0 28px}
+.s-title{font:700 clamp(40px,11.5vw,80px)/1.2 'Reem Kufi',sans-serif;margin:0 0 14px}
+.s-lead{font-size:18px;color:var(--ink-dim);max-width:26em;margin:0 0 26px}
+.s-ph{display:grid;grid-template-columns:repeat(14,1fr);height:18px;border-radius:9px;overflow:hidden;margin-bottom:28px;box-shadow:0 0 0 2px var(--ink)}
+.s-cta{display:inline-block;text-decoration:none;font:800 16px 'Cairo',sans-serif;padding:13px 26px;border-radius:12px;background:var(--acc);color:var(--acc-ink)}
+.s-cta:focus-visible,.s-card:focus-visible,.s-back:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+.s-sec{padding-top:30px}
+.s-h{font:700 36px 'Reem Kufi',sans-serif;margin:0;display:flex;align-items:baseline;gap:12px}
+.s-h small{font:500 15px 'Tajawal',sans-serif;color:var(--ink-dim)}
+.s-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+@media(max-width:600px){.s-grid{grid-template-columns:1fr}}
+.s-card{display:block;text-decoration:none;color:var(--ink);background:var(--card);border:2px solid var(--ink);border-radius:6px 22px 6px 22px;padding:0 20px 20px;overflow:hidden}
+.s-card::before{content:'';display:block;height:10px;margin:0 -20px 16px;background:var(--acc)}
+.s-ready:hover{box-shadow:4px 4px 0 var(--ink)}
+.s-soon{border-style:dashed;border-color:var(--ink-dim);opacity:.78}
+.s-soon::before{background:repeating-linear-gradient(90deg,var(--ink-dim) 0 8px,transparent 8px 16px)}
+.s-ct{font:800 20px/1.6 'Cairo',sans-serif;margin:0 0 2px}
+.s-meta{color:var(--ink-dim);font-size:15px;margin-bottom:12px}
+.s-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px}
+.s-chips span{font-size:13px;font-weight:700;border:1.5px solid var(--acc);color:var(--acc);border-radius:99px;padding:0 11px}
+.s-open{font:800 15px 'Cairo',sans-serif;color:var(--acc)}
+.s-badge{font:800 14px 'Cairo',sans-serif;color:var(--ink-dim)}
+.s-foot{margin-top:46px;padding-top:16px;border-top:2px solid var(--ink);direction:ltr;font:700 14px 'Cairo',sans-serif;color:var(--ink-dim)}
+.s-back{display:inline-block;margin-top:16px;text-decoration:none;font:800 14px 'Cairo',sans-serif;color:var(--acc)}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div id="home">
+  <div class="s-wrap">
+    <div class="s-nav"><i></i>ملخصات زياد المصطفى</div>
+    <div class="s-hero">
+      <h1 class="s-title">ملخصات<br>زياد المصطفى</h1>
+      <p class="s-lead">ملخص وبطاقات مراجعة واختبار قصير لكل درس، في مكان واحد.</p>
+      <div class="s-ph" id="ph"></div>
+      <a class="s-cta" href="#sci">افتح مادة العلوم</a>
+    </div>
+    <div class="s-sec" id="sci">
+      <h2 class="s-h">علوم <small>درس واحد جاهز</small></h2>
+      <div class="s-grid">
+        <a class="s-card s-ready" href="#tobacco">
+          <div class="s-ct">التدخين ومخاطره</div>
+          <div class="s-meta">الوحدة الأولى، الدرس الثالث</div>
+          <div class="s-chips"><span>ملخص</span><span>بطاقات</span><span>اختبار</span></div>
+          <div class="s-open">افتح الدرس</div>
+        </a>
+        <div class="s-card s-soon">
+          <div class="s-ct">تفاعلات الاتحاد المباشر والانحلال والإحلال البسيط</div>
+          <div class="s-meta">الوحدة الأولى، الدرس الأول</div>
+          <div class="s-badge">قريبًا</div>
+        </div>
+      </div>
+    </div>
+    <div class="s-foot">by ZIAD AlMostafa</div>
+  </div>
+</div>
+<div id="reader" hidden>
+<div class="wrap">
+<a class="s-back" href="#">كل الملخصات</a>
+
+<header>
+  <div class="by">by ZIAD AlMostafa</div>
+  <h1>التدخين ومخاطره</h1>
+  <p class="sub">الوحدة الأولى — التفاعلات الكيميائية وآثارها على البيئة</p>
+</header>
+<div class="bar">
+  <div class="seg" id="parts"></div>
+  <div class="seg modes" id="modes"></div>
+  <div class="stat" id="stat"></div>
+</div>
+<main id="app"></main>
+
+</div>
+</div>
+<script>
+
+const SUM={"1": "<div class=\"callout\">\n    السيجارة ليست مجرد عشب يحترق، بل هي <b>مصنع كيميائي معقد<\/b>: بمجرد اشتعالها تحدث تفاعلات كيميائية متشابكة تُنتج آلاف المواد الكيميائية، معظمها غازات سامة ومواد مسبِّبة للسرطان.\n  <\/div><section>\n    <div class=\"section-head\">\n      <div class=\"num\">🌿<\/div>\n      <h2>نبات التبغ<\/h2>\n    <\/div>\n    <div class=\"text-block\">\n      <p>يمثّل نبات التبغ المادة الأساسية والمكوّن الرئيسي الذي تقوم عليه صناعة السجائر بجميع أنواعها.<\/p>\n      <p><b style=\"color:var(--leaf)\">مكان النمو:<\/b> ينمو أساسًا في المناطق الدافئة، وتحديدًا المناطق الاستوائية.<\/p>\n      <p><b style=\"color:var(--leaf)\">شكل النبات:<\/b> ساق مستقيمة سميكة، أوراق خضراء كبيرة، وأزهار أنبوبية الشكل بيضاء أو زهرية أو حمراء.<\/p>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">1<\/div>\n      <h2>مكونات أوراق التبغ<\/h2>\n    <\/div>\n\n    <div class=\"comp-card c-nicotine\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>١ — النيكوتين<\/div>\n      <p>مركب عضوي طبيعي قلوي التأثير، يتكوّن في تركيبه الكيميائي من عناصر الكربون والهيدروجين والنيتروجين.<\/p>\n      <div class=\"fact\">ارتفاع درجة الحرارة الناتج عن إشعال السيجارة يجعله يتبخّر ويتحوّل إلى الحالة الغازية، فيمتزج بالدخان ويستنشقه المدخّن.<\/div>\n    <\/div>\n\n    <div class=\"comp-card c-carb\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>٢ — مواد كربوهيدراتية وبروتينية<\/div>\n      <p>مواد توجد طبيعيًا في أوراق التبغ، وعند احتراقها تنتج أول أكسيد الكربون والقطران.<\/p>\n      <div class=\"fact\">القطران: سائل لزج يتكوّن من خليط نواتج احتراق السكريات والبروتينات النباتية والألياف.<\/div>\n    <\/div>\n\n    <div class=\"comp-card c-mineral\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>٣ — العناصر المعدنية<\/div>\n      <p>توجد في أوراق التبغ عناصر معدنية نافعة إلى جانب عناصر ثقيلة سامة.<\/p>\n      <div class=\"fact\">معدنية: البوتاسيوم، الماغنسيوم، الكالسيوم — ثقيلة سامة: الكادميوم، الرصاص، الزرنيخ.<\/div>\n    <\/div>\n\n    <div class=\"comp-card c-radio\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>٤ — العناصر المشعة<\/div>\n      <p>يحتوي التبغ على كميات قليلة من عناصر مشعة، وهي المسؤولة عن الضرر الإشعاعي الذي يصيب رئتَي المدخّن.<\/p>\n      <div class=\"fact\">مثال: عنصر البولونيوم – 210.<\/div>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">2<\/div>\n      <h2>نواتج احتراق التبغ<\/h2>\n    <\/div>\n    <p style=\"color:var(--ink-dim);margin-top:-10px;margin-bottom:18px;\">احتراق أوراق التبغ ومكوناته يؤدي إلى تصاعد خليط من الغازات الخطيرة:<\/p>\n\n    <div class=\"gas-grid\">\n      <div class=\"gas-box tox\">\n        <h3>☠️ غازات سامة<\/h3>\n        <div class=\"molecule\">أول أكسيد الكربون <span>CO<\/span><\/div>\n        <div class=\"molecule\">سيانيد الهيدروجين <span>HCN<\/span><\/div>\n      <\/div>\n      <div class=\"gas-box irr\">\n        <h3>⚠️ غازات مهيّجة للجهاز التنفسي<\/h3>\n        <div class=\"molecule\">أكاسيد النيتروجين <span>NO / NO₂<\/span><\/div>\n        <div class=\"molecule\">غاز الأمونيا <span>NH₃<\/span><\/div>\n      <\/div>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">3<\/div>\n      <h2>عناصر معدنية vs عناصر ثقيلة سامة<\/h2>\n    <\/div>\n    <div class=\"split\">\n      <div class=\"col safe\">\n        <h3>عناصر معدنية<\/h3>\n        <ul>\n          <li>البوتاسيوم (K)<\/li>\n          <li>الماغنسيوم (Mg)<\/li>\n          <li>الكالسيوم (Ca)<\/li>\n        <\/ul>\n      <\/div>\n      <div class=\"col danger\">\n        <h3>عناصر ثقيلة سامة<\/h3>\n        <ul>\n          <li>الكادميوم<\/li>\n          <li>الرصاص<\/li>\n          <li>الزرنيخ<\/li>\n        <\/ul>\n      <\/div>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">🧪<\/div>\n      <h2>نشاط: مكونات التبغ ونواتج احتراقه<\/h2>\n    <\/div>\n    <p style=\"color:var(--ink-dim);margin-top:-10px;\">زجاجة بلاستيكية شفافة، قطن، سدادة، ماء، سيجارة، ملقط.<\/p>\n    <ul class=\"steps\">\n      <li><span class=\"n\">١<\/span> تُثبَّت السيجارة في غطاء الزجاجة، وقطعة من القطن الأبيض عند فوهتها.<\/li>\n      <li><span class=\"n\">٢<\/span> تُملأ الزجاجة بالماء، وتُغلق، ثم تُشعَل السيجارة وتُنزَع السدادة السفلية.<\/li>\n      <li><span class=\"n\">٣<\/span> مع انسياب الماء إلى الخارج، يُسحب الهواء والدخان إلى داخل الزجاجة عبر السيجارة المشتعلة.<\/li>\n    <\/ul>\n    <div class=\"obs-box\">\n      <b>الملاحظة:<\/b> يظهر دخان كثيف داخل الزجاجة، ويتحوّل لون القطن الأبيض إلى اللون الداكن أو البني بسبب ترسّب بعض نواتج الاحتراق بين ألياف القطن.\n    <\/div>\n    <div class=\"conclusion\">\n      <b>الاستنتاج:<\/b> بمجرد اشتعال السيجارة واحتراق أوراق التبغ، تحدث تفاعلات كيميائية معقدة تُنتج آلاف المواد الكيميائية، معظمها غازات سامة ومواد مسبِّبة للسرطان.\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">4<\/div>\n      <h2>رحلة العناصر المعدنية والمشعة<\/h2>\n    <\/div>\n    <p style=\"color:var(--ink-dim);margin-top:-10px;margin-bottom:18px;\">تمرّ العناصر المعدنية والمشعة في عملية التدخين بأربع مراحل:<\/p>\n    <div class=\"comp-card\" style=\"--accent:var(--toxic)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>١ — مرحلة التطاير<\/div>\n      <p>عند اشتعال التبغ تتبخّر بعض المعادن الثقيلة والعناصر المشعة، فتتحوّل إلى غازات أو تلتصق بجزيئات القطران الدقيقة.<\/p>\n    <\/div>\n    <div class=\"comp-card\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>٢ — مرحلة الاستنشاق<\/div>\n      <p>تدخل ذرّات العناصر المشعة إلى الرئتين وتترسّب في تفرّعات الشعب الهوائية.<\/p>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--leaf)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>٣ — مرحلة التراكم الإشعاعي<\/div>\n      <p>يؤدي تراكم العناصر المشعة إلى تلف الحمض النووي (DNA) في خلايا الرئة، ويزيد هذا التلف من خطر الإصابة بالأورام السرطانية.<\/p>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--slate)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>٤ — مرحلة الرماد<\/div>\n      <p>يحتوي الرماد المتبقي على معادن غير متطايرة مثل الكالسيوم والبوتاسيوم، وهي التي تعطيه اللون الأبيض أو الرمادي.<\/p>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">5<\/div>\n      <h2>أضرار التدخين<\/h2>\n    <\/div>\n    <div class=\"callout\" style=\"margin-top:0\">\n      يُعدّ التدخين من أكبر المخاطر التي تهدّد الصحة العامة؛ إذ يُقدَّر عدد الوفيات الناتجة عنه بأكثر من <b>٨ ملايين شخص سنويًا<\/b> حول العالم وفقًا لمنظمة الصحة العالمية (WHO) ووزارة الصحة المصرية، وهو عامل رئيسي لأمراض القلب والرئة.\n    <\/div>\n    <div class=\"split\">\n      <div class=\"col\">\n        <h3 style=\"color:var(--toxic)\">١ — أضرار صحية<\/h3>\n        <ul><li>القلب<\/li><li>الرئتان<\/li><li>الدم<\/li><li>الأسنان<\/li><\/ul>\n      <\/div>\n      <div class=\"col\">\n        <h3 style=\"color:var(--leaf)\">٢ — أضرار بيئية<\/h3>\n        <ul><li>تلوّث الهواء<\/li><li>تلوّث المياه<\/li><li>قطع الأشجار<\/li><li>تراكم أعقاب السجائر<\/li><\/ul>\n      <\/div>\n    <\/div>\n    <p style=\"color:var(--ink-dim);font-size:13px;margin:8px 4px 0;\">القوائم أعلاه مأخوذة من الرسوم التوضيحية في الكتاب، فهي بلا شرح نصّي.<\/p>\n    <div class=\"obs-box\">\n      <b>اليوم العالمي للامتناع عن التدخين (٣١ مايو):<\/b> مناسبة سنوية للتوعية بمخاطر التدخين الصحية وتسليط الضوء على الأمراض المزمنة والوفيات التي يسببها التبغ، وتتعاون فيها منظمة الصحة العالمية والدول لإطلاق حملات توعوية وتشريعات تمنع التدخين في الأماكن العامة، حمايةً للأجيال القادمة.\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">6<\/div>\n      <h2>الجهاز التنفسي: الرئتان والتدخين<\/h2>\n    <\/div>\n    <div class=\"split\">\n      <div class=\"col\">\n        <h3 style=\"color:var(--leaf)\">رئتان طبيعيتان<\/h3>\n        <p style=\"margin:0;color:var(--ink-dim)\">لونهما وردي، وهما أكثر قدرة على إمداد الجسم بالأكسجين.<\/p>\n      <\/div>\n      <div class=\"col\">\n        <h3 style=\"color:var(--toxic)\">رئتا شخص مدخّن<\/h3>\n        <p style=\"margin:0;color:var(--ink-dim)\">لونهما داكن أو أسود بسبب ترسّب القطران ودقائق المواد الكيميائية داخل أنسجة الرئة، وهما أقل قدرة على إمداد الجسم بالأكسجين.<\/p>\n      <\/div>\n    <\/div>\n    <p style=\"color:var(--ink-dim);margin:22px 0 14px;\">مع استمرار التدخين تفقد الرئتان مرونتهما وتقلّ سعتهما تدريجيًا، ويترتب على ذلك:<\/p>\n    <ul class=\"steps\">\n      <li><span class=\"n\">١<\/span> ضيق تنفس مزمن.<\/li>\n      <li><span class=\"n\">٢<\/span> سعال مستمر.<\/li>\n      <li><span class=\"n\">٣<\/span> تراجع ملحوظ في القدرة على بذل المجهود البدني.<\/li>\n      <li><span class=\"n\">٤<\/span> زيادة فرصة الإصابة بسرطان الرئة.<\/li>\n    <\/ul>\n  <\/section><section>\n    <div class=\"section-head\">\n      <div class=\"num\">7<\/div>\n      <h2>الحويصلات الهوائية والنفاخ الرئوي<\/h2>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--violet)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>الحويصلات الهوائية في الرئتين<\/div>\n      <p><b>التركيب:<\/b> تراكيب صغيرة الحجم، رقيقة الجدر، كثيرة العدد.<\/p>\n      <div class=\"fact\"><b>الوظيفة:<\/b> توفّر مساحة سطح كبيرة تسمح بتبادل الغازات (الأكسجين وثاني أكسيد الكربون) بين الرئتين والدم.<\/div>\n    <\/div>\n    <p style=\"color:var(--ink-dim);margin:22px 0 14px;\">قد يؤدي التدخين إلى إصابة المدخّن بمرض <b style=\"color:var(--ember)\">النفاخ الرئوي (Emphysema)<\/b>، ويحدث كالتالي:<\/p>\n    <ul class=\"steps\">\n      <li><span class=\"n\">١<\/span> عند استنشاق دخان السجائر.<\/li>\n      <li><span class=\"n\">٢<\/span> تتكثّف مادة القطران اللزجة وتترسّب على الجدر الداخلية للحويصلات الهوائية، فتفقد الأنسجة الرئوية مرونتها.<\/li>\n      <li><span class=\"n\">٣<\/span> باستمرار تراكم القطران تتمزّق جدر الحويصلات الهوائية.<\/li>\n      <li><span class=\"n\">٤<\/span> تتحوّل من أكياس صغيرة وكثيرة إلى تجاويف كبيرة مترهّلة، فتقلّ مساحة السطح المتاح لتبادل الغازات.<\/li>\n    <\/ul>\n    <div class=\"conclusion\">\n      <b>أعراض المرض:<\/b> يعاني المريض من ضيق شديد ومزمن في التنفس، فتقلّ كمية الأكسجين التي تصل إلى الدم.\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\"><div class=\"num\">8<\/div><h2>أثر التدخين على أجهزة الجسم<\/h2><\/div>\n    <div class=\"split\">\n      <div class=\"col danger\"><h3>أول أكسيد الكربون (CO)<\/h3>\n        <ul><li>يرتبط بهيموجلوبين الدم بمعدل أسرع من الأكسجين.<\/li><li>فتقل نسبة الأكسجين المحمولة في الدم وتصل للأنسجة.<\/li><\/ul><\/div>\n      <div class=\"col safe\"><h3>النيكوتين<\/h3>\n        <ul><li>يزيد معدل ضربات القلب وضغط الدم.<\/li><li>يسبب ضيق الأوعية الدموية.<\/li><li>فيزيد خطر أمراض القلب وتصلب الشرايين.<\/li><\/ul><\/div>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--ember);margin-top:16px\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>الجهاز الدوري (القلب)<\/div>\n      <p>يتأثر بالمواد الناتجة عن التدخين، ويُجهَد عضلة القلب لأن النيكوتين يزيد ضربات القلب وضغط الدم ويضيّق الأوعية الدموية.<\/p>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--violet)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>الجهاز العصبي والحواس<\/div>\n      <p>يسبب النيكوتين: زيادة التوتر، واضطرابات النوم، واضطرابات الرؤية، وتأثيرًا سلبيًا على وظائف الدماغ والتركيز على المدى الطويل خاصة لدى المراهقين.<\/p>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--leaf)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>الخصوبة والصحة الإنجابية<\/div>\n      <p>يُضعف الخصوبة (القدرة على الإنجاب) لدى الجنسين، ويزيد من أخطار التشوهات الجنينية.<\/p>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--slate)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>المناعة والمظهر العام<\/div>\n      <p>يُضعف جهاز المناعة، ويظهر ذلك في شحوب الجلد وتساقط الشعر.<\/p>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\"><div class=\"num\">9<\/div><h2>وعي صحي: كيف يصبح التدخين عادة؟<\/h2><\/div>\n    <ul class=\"steps\">\n      <li><span class=\"n\">١<\/span> عند التدخين يصل النيكوتين إلى الدماغ بسرعة.<\/li>\n      <li><span class=\"n\">٢<\/span> يحفّز إفراز مواد تسبب شعورًا مؤقتًا بالراحة.<\/li>\n      <li><span class=\"n\">٣<\/span> يزول هذا التأثير سريعًا، مما يدفع إلى تكرار التدخين.<\/li>\n      <li><span class=\"n\">٤<\/span> يؤدي التكرار إلى الإدمان، فيصبح عادة ضارة يصعب التخلص منها.<\/li>\n    <\/ul>\n  <\/section>", "2": "<section>\n    <div class=\"section-head\"><div class=\"num\">1<\/div><h2>الأضرار البيئية<\/h2><\/div>\n    <div class=\"comp-card\" style=\"--accent:var(--slate)\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>تلوث الهواء<\/div>\n      <p>ينتج عن التدخين كميات كبيرة من ثاني أكسيد الكربون في الهواء الجوي، مما يساهم في ظاهرة الاحتباس الحراري. وقد أكدت منظمة الصحة العالمية أن التدخين يطلق عشرات الملايين من أطنان CO₂ سنويًا في الغلاف الجوي.<\/p>\n      <div class=\"fact\"><b>الاحتباس الحراري:<\/b> ارتفاع درجة حرارة الأرض نتيجة زيادة نسبة بعض الغازات بالغلاف الجوي.<\/div>\n    <\/div>\n    <div class=\"comp-card\" style=\"--accent:#5f9ec4\">\n      <div class=\"comp-title\"><span class=\"dot\"><\/span>تلوث الماء والتربة<\/div>\n      <p>تُعدّ أعقاب السجائر من أكثر النفايات انتشارًا، وتحتوي على مواد كيميائية ضارة تتسرب إلى التربة والمياه وتؤثر على الكائنات الحية.<\/p>\n      <div class=\"fact\">بحسب منظمة الصحة العالمية: ينتهي المطاف بعدة تريليونات من مرشحات (فلاتر) السجائر في المحيطات والأنهار والأرصفة والشواطئ كل عام.<\/div>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\"><div class=\"num\">2<\/div><h2>أنواع التدخين حسب الوسيلة<\/h2><\/div>\n    <div class=\"split\">\n      <div class=\"col danger\"><h3>التدخين التقليدي<\/h3><p style=\"margin:0;color:var(--ink-dim)\">يعتمد على حرق أوراق التبغ الموجودة في السجائر.<\/p><\/div>\n      <div class=\"col danger\"><h3>التدخين الإلكتروني<\/h3><p style=\"margin:0;color:var(--ink-dim)\">يعتمد على تسخين سائل يحتوي على النيكوتين بواسطة جهاز إلكتروني.<\/p><\/div>\n    <\/div>\n    <div class=\"callout\" style=\"margin-top:16px\">\n      اعتقاد خاطئ أن الإلكتروني <b>أقل ضررًا<\/b>؛ فقد ثبت أن كليهما يسبب أضرارًا بالغة مباشرة للرئتين والقلب.\n    <\/div>\n    <div class=\"obs-box\">\n      <b>النسبة المرتفعة من النيكوتين في الإلكتروني تؤدي إلى:<\/b> سرعة الإدمان، واضطرابات حادة في وظائف القلب والجهاز العصبي.<br>\n      <b>مزيد من المعرفة:<\/b> لا يُعدّ بديلًا آمنًا؛ لأن البخار الناتج عن تسخين السوائل يحتوي على جزيئات دقيقة ومواد سامة.\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\"><div class=\"num\">3<\/div><h2>أنواع التدخين حسب طريقة التعرض<\/h2><\/div>\n    <div class=\"split\">\n      <div class=\"col danger\"><h3>التدخين المباشر<\/h3><ul><li>استنشاق المدخن الدخان الناتج عن احتراق التبغ أو الرذاذ المنبعث من الأجهزة الإلكترونية بشكل مقصود.<\/li><li>يسبب أضرارًا بالغة ومباشرة للرئتين والقلب.<\/li><\/ul><\/div>\n      <div class=\"col danger\"><h3>التدخين السلبي<\/h3><ul><li>استنشاق غير المدخنين الدخان الذي نفثه المدخن أو المتصاعد من طرف السيجارة المشتعلة.<\/li><li>تركيزات أعلى من الغازات السامة والمسرطنة لعدم مروره عبر الفلتر.<\/li><li>نفس مخاطر أمراض القلب والجهاز التنفسي التي تصيب المدخنين.<\/li><\/ul><\/div>\n    <\/div>\n  <\/section><section>\n    <div class=\"section-head\"><div class=\"num\">4<\/div><h2>وعي صحي: طرق الوقاية من التدخين<\/h2><\/div>\n    <ul class=\"steps\">\n      <li><span class=\"n\">١<\/span> <span><b>اتخذ قرارًا بالرفض:<\/b> تعلّم أن تقول «لا» لأي شخص يعرض عليك التدخين.<\/span><\/li>\n      <li><span class=\"n\">٢<\/span> <span><b>اختر أصدقاء إيجابيين:<\/b> ابتعد عن أصدقاء السوء، وصاحب من يحافظون على صحتهم.<\/span><\/li>\n      <li><span class=\"n\">٣<\/span> <span><b>اشغل وقتك بأنشطة مفيدة:<\/b> مثل الرياضة أو القراءة أو الهوايات.<\/span><\/li>\n      <li><span class=\"n\">٤<\/span> <span><b>تجنّب أماكن التدخين:<\/b> لحماية نفسك من التدخين السلبي.<\/span><\/li>\n      <li><span class=\"n\">٥<\/span> <span><b>اطلب المساعدة عند الحاجة:<\/b> تحدث مع أحد الوالدين أو المعلم إذا شعرت بضغوط لتجربة التدخين.<\/span><\/li>\n      <li><span class=\"n\">٦<\/span> <span><b>تعرّف على أضرار التدخين:<\/b> كلما زادت معرفتك بأضراره زادت قدرتك على تجنبه.<\/span><\/li>\n    <\/ul>\n  <\/section>"};
+const P={1:[["بنك الأسئلة", [["ما هو النيكوتين؟ وما العناصر الداخلة في تركيبه؟", "مركب عضوي طبيعي قلوي التأثير، يتكوّن من الكربون والهيدروجين والنيتروجين."], ["ماذا يحدث للنيكوتين عند ارتفاع درجة الحرارة الناتجة عن إشعال السيجارة؟", "يتبخّر ويتحوّل إلى الحالة الغازية ليمتزج بالدخان، فيستنشقه المدخّن."], ["اذكر نوعين من الغازات السامة الناتجة عن احتراق التبغ.", "أول أكسيد الكربون (CO)، وسيانيد الهيدروجين (HCN)."], ["اذكر نوعين من الغازات المهيّجة للجهاز التنفسي.", "أكاسيد النيتروجين (NO – NO₂)، وغاز الأمونيا (NH₃)."], ["ما هو القطران، وممّ يتكوّن؟", "سائل لزج ينتج عن احتراق المواد الكربوهيدراتية والبروتينية في التبغ، ويتكوّن من خليط نواتج احتراق السكريات والبروتينات النباتية والألياف."], ["صنِّف العناصر المعدنية الموجودة في أوراق التبغ.", "عناصر معدنية مثل البوتاسيوم والماغنسيوم والكالسيوم، وعناصر ثقيلة سامة مثل الكادميوم والرصاص والزرنيخ."], ["ما العنصر المشع المسؤول عن الضرر الإشعاعي في رئة المدخّن؟", "عنصر البولونيوم – 210."], ["ماذا لوحظ في تجربة احتراق السيجارة بخصوص لون القطن؟ ولماذا؟", "تحوّل لون القطن الأبيض إلى الداكن أو البني، بسبب ترسّب بعض نواتج الاحتراق بين ألياف القطن."], ["ما الاستنتاج العام لتجربة احتراق السيجارة؟", "اشتعال السيجارة واحتراق أوراق التبغ يُحدث تفاعلات كيميائية معقدة، تُنتج آلاف المواد الكيميائية، معظمها غازات سامة ومواد مسبِّبة للسرطان."], ["لماذا تُعدّ السيجارة أشبه بمصنع كيميائي وليست مجرد عشب يحترق؟", "لأن احتراقها ينتج كثيرًا من المركبات السامة (مثل CO وHCN وأكاسيد النيتروجين) نتيجة تفاعلات كيميائية متشابكة، وليس مجرد احتراق بسيط لمادة نباتية."], ["أين ينمو نبات التبغ بصورة أساسية؟", "في المناطق الدافئة، وتحديدًا المناطق الاستوائية."], ["علّل: تزداد فرص الإصابة بالأورام السرطانية (خاصة سرطان الرئة) عند المدخنين.", "بسبب تراكم العناصر المشعة الموجودة في التبغ، مما يؤدي إلى تلف الحمض النووي (DNA) في خلايا الرئة."], ["علّل: لون الرماد يكون أبيض أو رماديًا.", "لأنه يحتوي على معادن غير متطايرة، مثل الكالسيوم أو البوتاسيوم."], ["علّل: يؤدي التدخين إلى تغيّر لون الرئتين من الوردي الطبيعي إلى الداكن أو الأسود.", "نتيجة ترسّب مادة القطران ودقائق المواد الكيميائية داخل أنسجة الرئة."], ["علّل: توجد الحويصلات الهوائية بأعداد كبيرة جدًا داخل الرئتين.", "لتوفير مساحة سطح كبيرة تسمح بتبادل الغازات بين الدم والرئتين."]]],
+
+["أسئلة صفحة ١١٠: اختر الإجابة الصحيحة",[
+["ينتج عن تدخين التبغ غاز سام (X) ومادة لزجة داكنة (Y). ماذا يمثل كل منهما؟ (أ) ثاني أكسيد الكربون / النيكوتين (ب) أول أكسيد الكربون / القطران (ج) أول أكسيد الكربون / الرصاص (د) ثاني أكسيد الكربون / الرصاص","(ب) أول أكسيد الكربون / القطران"],
+["يرجع استمرار المدخن في التدخين (الإدمان) إلى التأثير الكيميائي للنيكوتين على: (أ) الجهاز العصبي والدماغ (ب) عضلات الصدر (ج) الحويصلات الهوائية (د) الجهاز المناعي","(أ) الجهاز العصبي والدماغ"],
+["يشترك «مرض النفاخ الرئوي» مع تأثير غاز أول أكسيد الكربون في نتيجة نهائية واحدة على الجسم هي: (أ) حدوث طفرات جينية (ب) نقص أكسجين الدم (ج) زيادة حالة الإدمان (د) تساقط شعر الرأس","(ب) نقص أكسجين الدم"],
+["ماذا يحدث عند استنشاق غاز أول أكسيد الكربون (CO) الناتج عن التدخين؟","يرتبط بالهيموجلوبين في الدم بمعدل أسرع بكثير من الأكسجين، فتقل كمية الأكسجين الواصلة إلى أنسجة الجسم وأجهزته الحيوية."]
+]],
+["تدريبات: ١ اختر الإجابة الصحيحة",[
+["ينمو نبات التبغ بصورة أساسية في المناطق: (أ) القطبية (ب) الجافة (ج) الدافئة الاستوائية (د) الباردة المعتدلة","(ج) الدافئة الاستوائية"],
+["يقدَّر عدد الوفيات السنوية بسبب التدخين عالميًا بنحو: (أ) مليون (ب) ٤ ملايين (ج) ٦ ملايين (د) ٨ ملايين","(د) ٨ ملايين شخص"],
+["تكمن خطورة تدخين التبغ في أنه: (أ) ينتج مواد ضارة (ب) يزيد كمية الأكسجين في الدم (ج) يحسّن عمل الرئتين (د) يقلل الاحتباس الحراري","(أ) ينتج مواد ضارة"],
+["من العناصر المعدنية الثقيلة السامة الناتجة عن احتراق التبغ عنصرا: (أ) الكادميوم والكالسيوم (ب) الزرنيخ والماغنسيوم (ج) الرصاص والكادميوم (د) الرصاص والبوتاسيوم","(ج) الرصاص والكادميوم"],
+["عنصر ........ من العناصر المشعة التي تتسرب إلى الرئتين مع تدخين السجائر: (أ) اليورانيوم-٢٣٥ (ب) البولونيوم-٢١٠ (ج) الأكتينيوم-٢٢٧ (د) الرادون-٢٢٢","(ب) البولونيوم – 210"],
+["تراجع القدرة على بذل المجهود البدني للمدخن سببه الأساسي: (أ) تساقط الشعر (ب) شحوب الجلد (ج) نقص أكسجين الدم (د) زيادة الوزن","(ج) نقص أكسجين الدم"],
+["أثناء التدخين تدخل العناصر المشعة إلى الرئتين وتترسب في منطقة: (أ) الحويصلات الهوائية (ب) تفرعات الشعب الهوائية (ج) الأوعية الدموية (د) الحنجرة","(ب) تفرعات الشعب الهوائية"],
+["مرض «النفاخ الرئوي» ينتج أساسًا عن تمزق: (أ) عضلات الصدر (ب) جدر الحويصلات (ج) الأوعية الدموية (د) القصبة الهوائية","(ب) جدر الحويصلات الهوائية"],
+["إدمان التدخين يرجع إلى التأثير الكيميائي للنيكوتين على: (أ) الجهاز المناعي (ب) الجهاز العصبي (ج) عظام القفص الصدري (د) الكبد","(ب) الجهاز العصبي"],
+["يؤدي تراكم مادة «البولونيوم-٢١٠» في خلايا الرئة إلى زيادة خطر: (أ) تساقط الشعر (ب) ضيق الأوعية الدموية (ج) الأورام السرطانية (د) تصلب الشرايين","(ج) الأورام السرطانية"],
+["يؤدي مرض «النفاخ الرئوي» إلى تحول الحويصلات الهوائية إلى: (أ) كتل صلبة (ب) تجاويف واسعة مترهلة (ج) أوعية دموية (د) خلايا عصبية","(ب) تجاويف واسعة مترهلة"],
+["أي الغازات الناتجة من السيجارة يعتبر غازًا مهيجًا وليس ساما؟ (أ) CO (ب) HCN (ج) NH₃ (د) N₂","(ج) NH₃ (غاز الأمونيا)"],
+["شخص يعاني من سرعة ضربات القلب وارتفاع ضغط الدم بعد التدخين؛ فتكون المادة المسؤولة هي: (أ) القطران (ب) النيكوتين (ج) البولونيوم-٢١٠ (د) أول أكسيد الكربون","(ب) النيكوتين"]
+]],
+["تدريبات: ٢ أكمل العبارات الآتية",[
+["ينمو نبات التبغ في المناطق الدافئة ويتميز بساق ........ وأزهار ........ الشكل.","ساق مستقيمة سميكة، وأزهار أنبوبية الشكل."],
+["يؤدي ترسب مادة ........ داخل أنسجة الرئة إلى تحول لونها من الوردي إلى الأسود.","القطران."],
+["يحتوي دخان السجائر على غازات سامة مثل ........ وغازات مهيجة للجهاز التنفسي مثل ........","سامة: أول أكسيد الكربون (CO) أو سيانيد الهيدروجين (HCN). مهيجة: أكاسيد النيتروجين أو الأمونيا (NH₃)."],
+["عند إشعال السيجارة يتبخر ........ ويتحول إلى غاز يمتزج بالدخان ويستنشقه المدخن.","النيكوتين."],
+["عند احتراق المواد الكربوهيدراتية والبروتينات في التبغ يتكون غاز ........ ومادة ........ اللزجة.","غاز أول أكسيد الكربون، ومادة القطران."],
+["تتميز الحويصلات الهوائية بأنها رقيقة الجدر وكثيرة العدد لتوفير ........ كبيرة لتبادل الغازات.","مساحة سطح."],
+["توجد في التبغ عناصر معدنية مثل ........ و........ وتوجد كميات قليلة من العناصر المشعة، منها ........","البوتاسيوم والماغنسيوم (أو الكالسيوم)؛ والمشعة: البولونيوم-٢١٠."],
+["من المعادن الثقيلة السامة الناتجة عن احتراق التبغ ........ و........","الرصاص والكادميوم (أو الزرنيخ)."],
+["يحتوي الرماد المتبقي من السيجارة على معادن غير متطايرة مثل ........ و........","الكالسيوم والبوتاسيوم."],
+["يرتبط غاز ........ الناتج من تدخين السجائر بالهيموجلوبين بمعدل أسرع من غاز ........","غاز أول أكسيد الكربون، بمعدل أسرع من غاز الأكسجين."],
+["يسبب التدخين اضطرابات في الجهاز العصبي مثل ........ و........","زيادة التوتر، واضطرابات النوم (أو اضطرابات الرؤية)."],
+["يمتد تأثير التدخين على القدرة على الإنجاب ليزيد من احتمالية حدوث ........ للأجنة.","التشوهات الجنينية (مع إضعاف الخصوبة لدى الجنسين)."],
+["يظهر أثر التدخين على المظهر العام في صورة ........ و........","شحوب الجلد وتساقط الشعر."]
+]],
+["تدريبات: ٣ ضع علامة (✓) أو (✗)",[
+["تتكون مادة القطران نتيجة احتراق المواد الكربوهيدراتية والبروتينية الموجودة في التبغ.","(✓) صحيحة."],
+["يحتوي التبغ على بعض العناصر المعدنية مثل البوتاسيوم والماغنسيوم.","(✓) صحيحة."],
+["تعتبر أكاسيد النيتروجين من الغازات المهيجة للجهاز التنفسي.","(✓) صحيحة."],
+["يؤدي التدخين إلى اتساع الحويصلات الهوائية وزيادة كفاءتها في تبادل الغازات.","(✗) خطأ: يؤدي إلى تمزق جدرها وتحولها لتجاويف مترهلة فتقل كفاءتها."],
+["يظهر رماد السيجارة باللون الأبيض نتيجة وجود المعادن غير المتطايرة مثل الكالسيوم.","(✓) صحيحة."],
+["تراكم العناصر المشعة في خلايا الرئة يسبب تلف الحمض النووي DNA.","(✓) صحيحة."],
+["يمكن لمريض النفاخ الرئوي ممارسة الرياضة العنيفة دون الشعور بضيق في التنفس.","(✗) خطأ: يعاني من ضيق شديد ومزمن في التنفس."],
+["يؤثر النيكوتين على الجهاز الدوري من خلال زيادة ضربات القلب وتصلب الشرايين.","(✓) صحيحة."],
+["تقتصر الآثار السلبية للتدخين على الجهاز التنفسي فقط ولا تؤثر على الجهاز الدوري.","(✗) خطأ: يؤثر أيضًا على القلب والدورة الدموية والجهاز العصبي والمناعة."],
+["يسبب النيكوتين الناتج عن حرق السجائر شعورًا دائمًا بالراحة.","(✗) خطأ: الشعور مؤقت ويزول سريعًا مما يدفع لتكرار التدخين."]
+]],
+["تدريبات: ٤ اكتب المصطلح العلمي",[
+["نبات ينمو في المناطق الدافئة الاستوائية وتُستخدم أوراقه في صناعة السجائر.","نبات التبغ."],
+["مركب عضوي قلوي يحتوي على الكربون والهيدروجين والنيتروجين، ومسؤول عن حدوث الإدمان.","النيكوتين."],
+["سائل لزج داكن ينتج عن احتراق السكريات والبروتينات النباتية والألياف في أوراق التبغ، ويترسب في الرئة.","القطران."],
+["تراكيب صغيرة رقيقة الجدر توفر مساحة سطح كبيرة لتبادل الغازات في الرئتين.","الحويصلات الهوائية."],
+["غاز سام ينتج عن احتراق التبغ ويرتبط بهيموجلوبين الدم أسرع من الأكسجين.","أول أكسيد الكربون (CO)."],
+["مرض تنفسي ينتج عن تمزق جدر الحويصلات الهوائية وتحولها إلى تجاويف كبيرة مترهلة.","النفاخ الرئوي (Emphysema)."],
+["المرحلة التي تتبخر فيها بعض المعادن وتلتصق بجزيئات القطران الدقيقة عند إشعال السيجارة.","مرحلة التطاير."]
+]],
+["تدريبات: ٥ علّل لما يأتي",[
+["يعاني المصابون بمرض النفاخ الرئوي من ضيق تنفس شديد ومزمن.","بسبب تمزق جدر الحويصلات الهوائية وتحولها إلى تجاويف كبيرة مترهلة، مما يقلل مساحة السطح المتاحة لتبادل الغازات ويُنقص الأكسجين الواصل للدم."],
+["يؤدي التدخين إلى إجهاد عضلة القلب.","لأن النيكوتين يزيد ضربات القلب وضغط الدم ويسبب ضيق الأوعية الدموية."],
+["يؤثر التدخين سلبًا على المظهر العام ونشاط الجهاز المناعي.","لأنه يضعف جهاز المناعة، ويظهر ذلك في شحوب الجلد وتساقط الشعر."],
+["تقل كمية الأكسجين المحمولة في دم المدخن مقارنة بالشخص الطبيعي.","لأن أول أكسيد الكربون يرتبط بهيموجلوبين الدم بمعدل أسرع من الأكسجين."],
+["تراجع القدرة على بذل المجهود البدني لدى المدخن.","لنقص الأكسجين الواصل للأنسجة، ولفقد الرئتين مرونتهما وقلة سعتهما تدريجيًا."],
+["يؤدي مرض النفاخ الرئوي إلى تدهور عملية تبادل الغازات في الرئتين.","لأن جدر الحويصلات تتمزق وتتحول إلى تجاويف كبيرة فتقل مساحة سطح التبادل."],
+["يحذّر الأطباء المراهقين خاصة من مخاطر التدخين على مستقبلهم الدراسي.","لأن النيكوتين يؤثر سلبًا على وظائف الدماغ والتركيز على المدى الطويل خاصة لدى المراهقين."],
+["خطورة التدخين على الخصوبة والصحة الإنجابية.","لأنه يضعف الخصوبة لدى الجنسين ويزيد من أخطار التشوهات الجنينية."],
+["التدخين يزيد من خطر الإصابة بأمراض القلب وتصلب الشرايين.","لأن النيكوتين يزيد معدل ضربات القلب وضغط الدم ويسبب ضيق الأوعية الدموية."],
+["يشعر المدخن بصعوبة في التنفس مع مرور الوقت.","لأن الرئتين تفقدان مرونتهما وتقل سعتهما تدريجيًا بسبب ترسب القطران."],
+["يعاني المدخن من صعوبة بالغة في التوقف عن التدخين.","لأن النيكوتين يصل الدماغ بسرعة ويحفز مواد تسبب راحة مؤقتة تزول سريعًا فيتكرر التدخين حتى يحدث الإدمان."],
+["يؤثر التدخين سلبًا في الجهاز العصبي والحواس.","لأن النيكوتين يسبب زيادة التوتر واضطرابات النوم والرؤية ويؤثر على وظائف الدماغ."]
+]]],2:[
+["أسئلة درس ٢: ١(أ) ضع علامة (✓) أو (✗)",[
+["تعتبر «أعقاب السجائر» نفايات آمنة تتحلل ولا تسبب ضررًا للتربة أو الكائنات الحية.","(✗) خطأ: تحتوي مواد كيميائية ضارة تتسرب للتربة والمياه وتؤثر على الكائنات الحية."],
+["تساهم الغازات المنبعثة من التدخين التقليدي في حدوث ظاهرة الاحتباس الحراري.","(✓) صحيحة."],
+["يقتصر ضرر التدخين على الشخص المدخن فقط.","(✗) خطأ: يمتد للتدخين السلبي والأنظمة البيئية."]
+]],
+["أسئلة درس ٢: ١(ب) علل لما يأتي",[
+["يحتوي الدخان الذي يستنشقه المدخن السلبي على تركيزات من المواد السامة والمسرطنة أعلى من المدخن المباشر.","لأنه يخرج مباشرة من طرف السيجارة المشتعلة إلى الهواء دون المرور عبر فلتر السيجارة."],
+["أهمية شغل وقت فراغ المراهقين بأنشطة مفيدة كالقراءة وممارسة الرياضة.","لأنها من طرق الوقاية من التدخين، فتبعدهم عن تجربته وعن أصدقاء السوء وتحافظ على صحتهم."]
+]],
+["أسئلة درس ٢: ٢(أ) اختر الإجابة الصحيحة",[
+["الغاز الذي ينطلق بكميات كبيرة من التدخين ويساهم بشكل مباشر في ظاهرة الاحتباس الحراري هو: (أ) أول أكسيد الكربون (ب) ثاني أكسيد الكربون (ج) الأكسجين (د) النيتروجين","(ب) ثاني أكسيد الكربون"],
+["من طرق الوقاية من التدخين: (أ) مصاحبة المدخنين (ب) تجربة السيجارة مرة واحدة (ج) البقاء في أماكن التدخين (د) شغل وقت الفراغ بأنشطة مفيدة","(د) شغل وقت الفراغ بأنشطة مفيدة"],
+["استنشاق غير المدخنين لدخان السجائر يسمى: (أ) التدخين المباشر (ب) التدخين الإلكتروني (ج) التدخين السلبي (د) الاحتباس الحراري","(ج) التدخين السلبي"]
+]],
+["أسئلة درس ٢: ٢(ب) ماذا يحدث عند...؟",[
+["الوجود المستمر في أماكن مغلقة مع أشخاص مدخنين لفترات طويلة.","يتعرض الشخص للتدخين السلبي، فيستنشق تركيزات عالية من الغازات السامة والمسرطنة، ويصاب بنفس مخاطر أمراض القلب والجهاز التنفسي التي تصيب المدخنين."],
+["التخلص العشوائي من تريليونات أعقاب السجائر ووصولها إلى المحيطات والأنهار.","تتسرب المواد الكيميائية الضارة إلى الماء والتربة فتلوثهما وتؤثر على الكائنات الحية."]
+]],
+["أسئلة درس ٢: ٣ أكمل وأجب",[
+["تصنف أنواع التدخين حسب كيفية التعرض للدخان إلى ........ و........","تدخين مباشر، وتدخين سلبي."],
+["من أهم طرق الوقاية من التدخين ........ و........","اتخاذ قرار الرفض، واختيار أصدقاء إيجابيين (أو شغل الوقت بأنشطة مفيدة، أو تجنب أماكن التدخين)."],
+["ما النتائج المترتبة على استمرار انطلاق عشرات الملايين من أطنان غاز ثاني أكسيد الكربون في الغلاف الجوي نتيجة التدخين؟","يساهم ذلك في حدوث ظاهرة الاحتباس الحراري، أي ارتفاع درجة حرارة الأرض."],
+["ما المقصود بالتدخين المباشر؟","قيام الشخص المدخن باستنشاق الدخان الناتج عن احتراق التبغ، أو الرذاذ المنبعث من أجهزة التدخين الإلكترونية، وإدخاله بشكل مقصود إلى رئتيه."],
+["«التدخين الإلكتروني يعد بديلًا آمنًا عن التدخين التقليدي». هل تؤيد هذه العبارة؟ مع ذكر السبب.","لا أؤيدها؛ لأن بخاره يحتوي على جزيئات دقيقة ومواد سامة، ونسبة النيكوتين المرتفعة فيه تسرّع الإدمان وتسبب اضطرابات حادة في وظائف القلب والجهاز العصبي."]
+]],
+["تدريبات صفحة ١٢٣: ١ اختر الإجابة الصحيحة",[
+["لاحظ مزارع تسرب مواد كيميائية سامة إلى تربة حقله القريب من طريق عام. المسبب الأكثر احتمالًا من مخلفات التدخين هو: (أ) الدخان المتصاعد (ب) أعقاب السجائر (الفلاتر) (ج) بخار السجائر الإلكترونية (د) أول أكسيد الكربون","(ب) أعقاب السجائر (الفلاتر)"],
+["إذا جلس شخص في غرفة مغلقة بجوار صديقه الذي يدخن، فإنه يتعرض لتدخين: (أ) مباشر (ب) سلبي (ج) إلكتروني (د) تقليدي","(ب) سلبي"],
+["تتسبب النفايات الناتجة عن أعقاب السجائر بشكل رئيسي في تلوث: (أ) الهواء فقط (ب) الماء فقط (ج) التربة فقط (د) الماء والتربة","(د) الماء والتربة"],
+["تتمثل خطورة التدخين الإلكتروني الأساسية على صحة الإنسان في أنه: (أ) يحرق أوراق التبغ (ب) يلوث مياه البحار (ج) يسبب اضطرابات حادة في وظائف القلب والجهاز العصبي (د) يطلق لدائن دقيقة","(ج) يسبب اضطرابات حادة في وظائف القلب والجهاز العصبي"],
+["الغاز الذي يطلقه التدخين بملايين الأطنان سنويًا مسببًا الاحتباس الحراري هو: (أ) الأكسجين (ب) الهيدروجين (ج) ثاني أكسيد الكربون (د) النيتروجين","(ج) ثاني أكسيد الكربون"],
+["من الأنشطة البديلة التي تساعد في الوقاية من التدخين: (أ) الجلوس في المقاهي (ب) ممارسة الرياضة والهوايات (ج) السهر الطويل (د) مصاحبة رفاق السوء","(ب) ممارسة الرياضة والهوايات"],
+["ينتهي المطاف بملايين الأطنان من مرشحات السجائر في: (أ) مصانع التدوير (ب) المحيطات والأنهار (ج) الغابات البعيدة (د) القطب الشمالي","(ب) المحيطات والأنهار"],
+["يؤدي النيكوتين ذو النسب المرتفعة في سوائل السجائر الإلكترونية مباشرة إلى: (أ) حرق الرئتين (ب) تراكم القطران بالشرايين (ج) تغير درجة الحرارة (د) إدمان كيميائي سريع","(د) إدمان كيميائي سريع"]
+]],
+["تدريبات صفحة ١٢٣: ٢ أكمل العبارات",[
+["يسبب غاز ثاني أكسيد الكربون الناتج عن التدخين حدوث ظاهرة ........","الاحتباس الحراري."],
+["ينقسم التدخين من حيث طريقة تعرض الفرد للدخان إلى تدخين ........ وتدخين ........","مباشر، وسلبي."],
+["من السلوكيات الصحية للوقاية من التدخين ........ أو ........","ممارسة الرياضة، أو القراءة (أو رفض التدخين)."],
+["لا يتوقف ضرر التدخين عند حدود الأشخاص، بل تمتد آثاره السلبية إلى ........","الأنظمة البيئية."],
+["تعتبر «أعقاب السجائر» ملوثًا خطيرًا لكل من ........ و........ و........","الماء والتربة والكائنات الحية."],
+["دخان السيجارة المتصاعد مباشرة للبيئة أشد خطورة لعدم مروره عبر ........ مما يجعل تركيز السموم فيه ........","عبر الفلتر، مما يجعل تركيز السموم فيه أعلى."],
+["يسبب التدخين الإلكتروني اضطرابات حادة في وظائف ........ و........","القلب والجهاز العصبي."]
+]],
+["تدريبات صفحة ١٢٤: ٣ ضع علامة (✓) أو (✗)",[
+["يساهم التدخين في ظاهرة الاحتباس الحراري.","(✓) صحيحة."],
+["الدخان المتصاعد من طرف السيجارة أقل خطرًا من الذي يستنشقه المدخن.","(✗) خطأ: هو أشد خطورة لعدم مروره عبر الفلتر."],
+["يؤدي التدخين الإلكتروني إلى اضطراب وظائف الجهاز العصبي.","(✓) صحيحة."],
+["لا توجد علاقة بين التدخين وبين أمراض القلب.","(✗) خطأ: يزيد من خطر أمراض القلب."],
+["مصاحبة أصدقاء السوء تزيد من احتمالية الوقوع في فخ التدخين.","(✓) صحيحة."],
+["التدخين الإلكتروني يعد وسيلة آمنة وتطبيقًا سليمًا لمساعدتك على تجنب إدمان التبغ التقليدي.","(✗) خطأ: ليس بديلًا آمنًا ويسبب الإدمان."],
+["التدخين السلبي يعرض الشخص لنفس مخاطر أمراض المدخن المباشر.","(✓) صحيحة."],
+["التدخين عادة يسهل التخلص منها في أي وقت دون مجهود.","(✗) خطأ: يصعب التخلص منها بسبب الإدمان."]
+]],
+["تدريبات صفحة ١٢٤: ٤ اكتب المصطلح العلمي",[
+["مادة كيميائية سامة تسبب سرعة الإدمان وتؤثر على الجهاز العصبي ووظائف القلب.","النيكوتين."],
+["استنشاق غير المدخنين للدخان المنبعث من سجائر المدخنين.","التدخين السلبي."],
+["استنشاق المدخن للدخان الناتج عن احتراق التبغ أو بخار الأجهزة الإلكترونية، وإدخاله بشكل مقصود إلى رئتيه.","التدخين المباشر."],
+["طريقة للتدخين تعتمد على حرق أوراق التبغ الموجود في السجائر.","التدخين التقليدي."],
+["طريقة للتدخين تعتمد على تسخين سائل يحتوي على النيكوتين بواسطة جهاز إلكتروني.","التدخين الإلكتروني."]
+]],
+["تدريبات صفحة ١٢٤: ٥ علّل لما يأتي",[
+["يساهم التدخين في زيادة مشكلة الاحتباس الحراري عالميًا.","لأنه يطلق كميات كبيرة (عشرات الملايين من الأطنان سنويًا) من ثاني أكسيد الكربون في الغلاف الجوي."],
+["خطورة التدخين السلبي على غير المدخنين.","لأنهم يستنشقون دخانًا بتركيزات أعلى من الغازات السامة والمسرطنة، فيصابون بنفس مخاطر أمراض القلب والجهاز التنفسي."],
+["ينصح بالابتعاد عن أصدقاء السوء للوقاية من التدخين.","لأنهم يشجعون على التدخين، ومصاحبتهم تزيد احتمالية الوقوع في فخه."],
+["قد تتلوث المحيطات والأنهار بسبب السجائر.","بسبب التخلص العشوائي من أعقاب السجائر (الفلاتر) التي تحتوي على مواد كيميائية ضارة تتسرب إلى المياه."],
+["يؤدي التدخين الإلكتروني إلى الإدمان.","لاحتوائه على نسبة مرتفعة من النيكوتين."],
+["تمثل أعقاب السجائر (الفلاتر) خطرًا بيئيًا جسيمًا على التربة والمياه.","لأنها من أكثر النفايات انتشارًا، وتحتوي على مواد كيميائية ضارة تتسرب إلى التربة والمياه وتؤثر على الكائنات الحية."],
+["لا يعتبر التدخين الإلكتروني أقل ضررًا من تدخين السجائر العادية.","لأن كليهما يسبب أضرارًا بالغة للرئتين والقلب، وبخار الإلكتروني يحتوي على جزيئات دقيقة ومواد سامة ونيكوتين بنسبة عالية."]
+]],
+["تدريبات صفحة ١٢٤: ٦ ماذا يحدث عند...؟",[
+["إلقاء أعقاب السجائر في التربة.","تتسرب منها مواد كيميائية ضارة فتلوث التربة وتؤثر على الكائنات الحية."],
+["زيادة نسبة ثاني أكسيد الكربون في الهواء الجوي.","يزداد الاحتباس الحراري وترتفع درجة حرارة الأرض."],
+["استنشاق شخص غير مدخن لدخان السجائر.","يتعرض للتدخين السلبي ولتركيزات عالية من الغازات السامة والمسرطنة، فيصاب بنفس مخاطر أمراض القلب والجهاز التنفسي."],
+["تسرب المواد الكيميائية من أعقاب السجائر إلى التربة الزراعية.","تتلوث التربة وتتأثر الكائنات الحية بالمواد الكيميائية الضارة."]
+]]]};
+const PN={1:'الجزء الأول<br>التبغ وأضراره الصحية',2:'الجزء الثاني<br>الأضرار البيئية وأنواع التدخين'};
+const MN={sum:'📖 الملخص',card:'🃏 بطاقات',quiz:'✅ اختبار'};
+let part=1,mode='sum';
+const $=id=>document.getElementById(id);
+const shuffle=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const strip=s=>s.replace(/^\s*\(([أبجد])\)\s*/,'');
+function items(p){return P[p].flatMap(([t,qs])=>qs.map(([q,a])=>{
+  const o={t,q,a,type:'open'};
+  if(/^\((✓|✗)\)/.test(a)){o.type='tf';o.ok=a[1];o.exp=a.replace(/^\((✓|✗)\)\s*/,'')}
+  else if(/\(أ\)/.test(q)&&/\(ب\)/.test(q)&&/^\([أبجد]\)/.test(a)){
+    const i=q.indexOf('(أ)');o.stem=q.slice(0,i).trim();o.opts=[];
+    const re=/\(([أبجد])\)\s*([\s\S]*?)(?=\s*\([أبجد]\)\s|$)/g;let m,rest=q.slice(i);
+    while((m=re.exec(rest)))o.opts.push([m[1],m[2].trim()]);
+    if(o.opts.length>=2){o.type='mcq';o.ok=a.match(/^\(([أبجد])\)/)[1]}
+  }
+  return o;
+}))}
+function best(){try{return JSON.parse(localStorage.getItem('zbest')||'{}')}catch(e){return{}}}
+function saveBest(p,v){try{const b=best();b[p]=Math.max(b[p]||0,v);localStorage.setItem('zbest',JSON.stringify(b))}catch(e){}}
+function head(){
+  $('parts').innerHTML=[1,2].map(p=>`<button class="${p==part?'on':''}" data-p="${p}">${PN[p]}</button>`).join('');
+  $('modes').innerHTML=Object.keys(MN).map(m=>`<button class="${m==mode?'on':''}" data-m="${m}">${MN[m]}</button>`).join('');
+  const b=best()[part];$('stat').textContent=b?'أفضل نتيجة في اختبار هذا الجزء: '+b+'%':'';
+  document.querySelectorAll('#parts button').forEach(x=>x.onclick=()=>{part=+x.dataset.p;go()});
+  document.querySelectorAll('#modes button').forEach(x=>x.onclick=()=>{mode=x.dataset.m;go()});
+}
+function go(){head();scrollTo({top:0});({sum:renderSum,card:renderCards,quiz:renderQuiz})[mode]()}
+function renderSum(){
+  $('app').innerHTML='<div class="tools"><button class="btn" id="tg">طي / فتح الكل</button></div>'+SUM[part];
+  document.querySelectorAll('#app section').forEach(s=>s.querySelector('.section-head').onclick=()=>s.classList.toggle('closed'));
+  let closed=false;$('tg').onclick=()=>{closed=!closed;document.querySelectorAll('#app section').forEach(s=>s.classList.toggle('closed',closed))};
+}
+function renderCards(){
+  let deck=shuffle(items(part).filter(x=>x.type=='open')),i=0,know=0,again=0;
+  const draw=()=>{
+    if(i>=deck.length){$('app').innerHTML=`<div class="qz"><div class="bigscore">${know}/${deck.length}</div><p class="empty" style="padding:6px 0 16px">عرفت ${know} وراجعت ${again}</p><div class="row"><button class="btn pri" id="rp">أعد كل البطاقات</button>${again?'<button class="btn" id="ra">راجع ما لم أعرفه</button>':''}</div></div>`;
+      $('rp').onclick=()=>{deck=shuffle(deck);i=know=again=0;draw()};
+      if($('ra'))$('ra').onclick=()=>{deck=shuffle(deck.filter(d=>d.miss));deck.forEach(d=>d.miss=0);i=know=again=0;draw()};return}
+    const c=deck[i];
+    $('app').innerHTML=`<div class="cnt">${i+1} / ${deck.length}</div><div class="fc" id="fc"><div class="fc-in"><div class="face"><small>${c.t}</small><div class="t">${c.q}</div><div class="hint">اضغط لإظهار الإجابة</div></div><div class="face back"><small>الإجابة</small><div class="t">${c.a}</div></div></div></div><div class="row"><button class="btn" id="no">🔁 راجعها</button><button class="btn pri" id="yes">✔ عرفتها</button></div>`;
+    $('fc').onclick=()=>$('fc').classList.toggle('flip');
+    $('yes').onclick=()=>{know++;i++;draw()};
+    $('no').onclick=()=>{c.miss=1;again++;i++;draw()};
+  };
+  deck.length?draw():$('app').innerHTML='<p class="empty">لا توجد بطاقات.</p>';
+}
+function renderQuiz(){
+  let pool=shuffle(items(part).filter(x=>x.type!='open')),i=0,score=0,done=false;
+  const total=pool.length;
+  const draw=()=>{
+    if(i>=pool.length){const pct=Math.round(score/pool.length*100);saveBest(part,pct);head();
+      const wrong=pool.filter(x=>x.w);
+      $('app').innerHTML=`<div class="qz"><div class="bigscore">${pct}%</div><p class="empty" style="padding:6px 0 16px">${score} صحيحة من ${pool.length} — ${pct>=85?'ممتاز 🌟':pct>=60?'جيد، راجع الأخطاء':'كرر المحاولة بعد مراجعة الملخص'}</p><div class="row"><button class="btn pri" id="rs">اختبار جديد</button>${wrong.length?'<button class="btn" id="rw">أعد الأسئلة الخاطئة ('+wrong.length+')</button>':''}</div></div>`;
+      $('rs').onclick=renderQuiz;
+      if($('rw'))$('rw').onclick=()=>{pool=shuffle(wrong);pool.forEach(x=>x.w=0);i=score=0;draw()};return}
+    const q=pool[i];done=false;
+    const body=q.type=='tf'?`<div class="qt">${q.q}</div><div class="tf"><button class="opt" data-v="✓">✓ صحيحة</button><button class="opt" data-v="✗">✗ خاطئة</button></div>`
+      :`<div class="qt">${q.stem}</div>`+q.opts.map(o=>`<button class="opt" data-v="${o[0]}">(${o[0]}) ${o[1]}</button>`).join('');
+    $('app').innerHTML=`<div class="prog"><i style="width:${i/pool.length*100}%"></i></div><div class="cnt">سؤال ${i+1} من ${pool.length} · الدرجة ${score}</div><div class="qz">${body}<div id="fb"></div></div>`;
+    document.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{
+      if(done)return;done=true;const ok=b.dataset.v==q.ok;
+      document.querySelectorAll('.opt').forEach(x=>{x.disabled=true;if(x.dataset.v==q.ok)x.classList.add('ok')});
+      if(ok)score++;else{b.classList.add('bad');q.w=1}
+      $('fb').innerHTML=`<div class="fb">${ok?'✅ إجابة صحيحة':'❌ إجابة خاطئة'}${q.type=='tf'&&q.exp?' — '+q.exp:(!ok&&q.type=='mcq'?' — الصحيحة: '+q.a:'')}</div><div class="row" style="margin-top:12px"><button class="btn pri" id="nx">${i+1<pool.length?'التالي ⟵':'النتيجة'}</button></div>`;
+      $('nx').onclick=()=>{i++;draw()};
+    });
+  };
+  total?draw():$('app').innerHTML='<p class="empty">لا توجد أسئلة.</p>';
+}
+window.openApp=go;
+</script>
+<script>
+(function(){
+  var c=['#e53935','#ef5a2d','#f4802a','#f9a825','#fbc02d','#d4e157','#8bc34a','#43a047','#26a69a','#26a0c5','#3d7fd6','#5a63d0','#7a4fc4','#8e3fb0'];
+  document.getElementById('ph').innerHTML=c.map(function(x){return '<span style="background:'+x+'"></span>'}).join('');
+  var home=document.getElementById('home'),rd=document.getElementById('reader'),cur=null;
+  function route(){var on=location.hash==='#tobacco';if(on===cur)return;cur=on;home.hidden=on;rd.hidden=!on;if(on)window.openApp();else scrollTo(0,0)}
+  addEventListener('hashchange',route);route();
+})();
+</script>
+</body>
+</html>
